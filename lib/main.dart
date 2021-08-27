@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.yellow,
       ),
-      home: MyHomePage(title: 'Flutter layout demo'),
+      home: MyHomePage(title: 'O Loro quer biscoito'),
     );
   }
 }
@@ -73,20 +73,43 @@ class _MyHomePageState extends State<MyHomePage> {
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
       _buildButtonColumn(Colors.black, Icons.call, 'CALL'),
-      _buildButtonColumn(Colors.black, Icons.near_me, 'ROUTE'),
+      _buildButtonColumn(Colors.black, Icons.dangerous, 'GET OUT'),
       _buildButtonColumn(Colors.black, Icons.share, 'SHARE'),
-    ],
-  );
+      ],
+    );
+
+    Widget textSection = const Padding(
+      padding: EdgeInsets.all(32),
+      child: Text(
+        'I met a bird that came from hell \n'
+        'He is little green, he is very well \n'
+        'He likes to play, he likes the milk \n'
+        'He likes to fight, he likes to kill \n\n'
+        'I met a bird that came from hell \n'
+        'He is little green, he is very well \n'
+        'He cannot fly and he is revolt \n'
+        'He don\'t like me and then he told \n',
+        softWrap: true,
+       ),
+    );
+
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Column(
+      body: Column( //Change to ListView to scroll
         children: [
+          Image.asset(
+            'images/loro720.jpg',
+            width: 600,
+            height: 240,
+            fit: BoxFit.cover,
+          ),
            titleSection,
            buttonSection,
+           textSection,
          ],
 	    ),
     );
